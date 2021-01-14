@@ -171,14 +171,6 @@ def send_weather(message):
 		bot.send_message(message.chat.id, 'Я не знаю такого города',reply_markup=m.start_markup)
 
 
-def scheduled(message):
-# получаем список подписчиков бота
-	subscriptions = db.get_subscriptions()
-	# отправляем всем новость
-	for s in subscriptions:
-		bot.send_locweather()
-
-
 bot.enable_save_next_step_handlers(delay=2)
 bot.load_next_step_handlers()
 bot.polling( none_stop = True)
